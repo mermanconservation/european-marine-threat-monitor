@@ -21,7 +21,8 @@ import {
   Minus,
   Award,
   BarChart3,
-  Target
+  Target,
+  Heart
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -1129,11 +1130,21 @@ export default function MarineDashboard() {
       {/* Header */}
       <div className="bg-gradient-ocean border-b border-border">
         <div className="container mx-auto px-4 py-8">
-          <div className="flex items-center gap-3 mb-4">
-            <Waves className="h-8 w-8 text-primary-foreground animate-wave" />
-            <h1 className="text-3xl font-bold text-primary-foreground">
-              European Marine Threat Monitor
-            </h1>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3 mb-4">
+              <Waves className="h-8 w-8 text-primary-foreground animate-wave" />
+              <h1 className="text-3xl font-bold text-primary-foreground">
+                European Marine Threat Monitor
+              </h1>
+            </div>
+            <Button
+              onClick={() => window.location.href = '/donate'}
+              variant="outline"
+              className="bg-coral text-white border-coral hover:bg-coral/90 hover:text-white"
+            >
+              <Heart className="h-4 w-4 mr-2" />
+              Support Conservation
+            </Button>
           </div>
           <p className="text-primary-foreground/80 max-w-2xl">
             Real-time monitoring with scientific indices: Ocean Health Index, WWF Risk Assessment, and IUCN Red List ecosystem rankings
