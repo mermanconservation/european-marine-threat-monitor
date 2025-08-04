@@ -63,7 +63,7 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "stable",
         impact: 75,
-        affected_species: ["Arctic Cod", "Seal populations"],
+        affected_species: ["Arctic Cod", "Seal populations", "Beluga whales"],
         description: "Oil drilling activities in Arctic waters",
         last_updated: "2024-01-15"
       },
@@ -73,9 +73,59 @@ const europeanCountries: CountryData[] = [
         severity: "critical",
         trend: "increasing",
         impact: 85,
-        affected_species: ["Polar bears", "Arctic marine life"],
+        affected_species: ["Polar bears", "Arctic marine life", "Walrus", "Ringed seals"],
         description: "Rapid ice melting affecting marine ecosystems",
         last_updated: "2024-01-10"
+      },
+      {
+        id: "no-fish-1",
+        type: "overfishing",
+        severity: "high",
+        trend: "stable",
+        impact: 70,
+        affected_species: ["Atlantic salmon", "Capelin", "Blue whiting", "Herring"],
+        description: "Intensive commercial fishing depleting fish stocks",
+        last_updated: "2024-01-16"
+      },
+      {
+        id: "no-pollution-2",
+        type: "pollution",
+        severity: "medium",
+        trend: "increasing",
+        impact: 60,
+        affected_species: ["Seabirds", "Arctic terns", "Guillemots"],
+        description: "Microplastics contamination in feeding areas",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "no-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "increasing",
+        impact: 55,
+        affected_species: ["Narwhals", "Bowhead whales", "Arctic char"],
+        description: "Increased Arctic shipping routes causing noise pollution",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "no-coastal-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 50,
+        affected_species: ["Kelp forests", "Sea urchins", "Coastal fish"],
+        description: "Coastal infrastructure development",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "no-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["King crab", "Native bottom fauna"],
+        description: "Red king crab invasion affecting benthic communities",
+        last_updated: "2024-01-11"
       }
     ],
     overall_risk: 70,
@@ -96,8 +146,8 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "stable",
         impact: 55,
-        affected_species: ["Baltic fish", "Seabirds"],
-        description: "Algal blooms in Baltic Sea",
+        affected_species: ["Baltic fish", "Seabirds", "Baltic salmon", "Perch"],
+        description: "Algal blooms in Baltic Sea reducing oxygen levels",
         last_updated: "2024-01-12"
       },
       {
@@ -106,9 +156,49 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "decreasing",
         impact: 45,
-        affected_species: ["Herring", "Cod"],
+        affected_species: ["Herring", "Cod", "Sprat", "Flounder"],
         description: "Improving sustainable fishing practices",
         last_updated: "2024-01-14"
+      },
+      {
+        id: "se-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 65,
+        affected_species: ["Baltic seals", "Eider ducks", "Arctic char"],
+        description: "Warming waters changing species distribution",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "se-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 40,
+        affected_species: ["Harbor porpoises", "Gray seals", "Common terns"],
+        description: "Industrial contaminants from legacy sources",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "se-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 50,
+        affected_species: ["Round goby", "Native benthic species"],
+        description: "Invasive round goby disrupting food webs",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "se-acidification-1",
+        type: "acidification",
+        severity: "medium",
+        trend: "increasing",
+        impact: 55,
+        affected_species: ["Mussels", "Barnacles", "Sea snails"],
+        description: "Ocean acidification affecting calcifying organisms",
+        last_updated: "2024-01-10"
       }
     ],
     overall_risk: 48,
@@ -129,9 +219,59 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "stable",
         impact: 50,
-        affected_species: ["Baltic seals", "Sea eagles"],
+        affected_species: ["Baltic seals", "Sea eagles", "Ringed seals"],
         description: "Industrial runoff in Gulf of Finland",
         last_updated: "2024-01-13"
+      },
+      {
+        id: "fi-forest-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "increasing",
+        impact: 60,
+        affected_species: ["Salmon", "Brown trout", "Grayling"],
+        description: "Forestry runoff affecting coastal waters",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "fi-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Arctic species", "Saimaa seal", "Landlocked salmon"],
+        description: "Rapid warming affecting lake and coastal ecosystems",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "fi-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["Four-horned sculpin", "Native fish species"],
+        description: "Invasive signal crayfish affecting native species",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "fi-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 40,
+        affected_species: ["Baltic porpoises", "Seabirds"],
+        description: "Commercial shipping traffic in Baltic routes",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "fi-coastal-1",
+        type: "coastal",
+        severity: "low",
+        trend: "increasing",
+        impact: 35,
+        affected_species: ["Coastal vegetation", "Brackish water species"],
+        description: "Summer cottage development on archipelago",
+        last_updated: "2024-01-16"
       }
     ],
     overall_risk: 42,
@@ -152,7 +292,7 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "increasing",
         impact: 60,
-        affected_species: ["Coastal fish", "Seagrass beds"],
+        affected_species: ["Coastal fish", "Seagrass beds", "Eelgrass", "Pipefish"],
         description: "Coastal development and land reclamation",
         last_updated: "2024-01-11"
       },
@@ -162,9 +302,59 @@ const europeanCountries: CountryData[] = [
         severity: "low",
         trend: "decreasing",
         impact: 25,
-        affected_species: ["Marine mammals"],
+        affected_species: ["Harbor porpoises", "Seals", "Seabirds"],
         description: "Noise from offshore wind farms",
         last_updated: "2024-01-16"
+      },
+      {
+        id: "dk-agriculture-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 75,
+        affected_species: ["Danish straits fish", "Mussel beds", "Algae"],
+        description: "Agricultural nitrogen runoff causing eutrophication",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "dk-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Cod", "Plaice", "Sole", "Turbot"],
+        description: "Bottom trawling affecting seafloor communities",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "dk-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 40,
+        affected_species: ["Pacific oyster", "Native shellfish"],
+        description: "Invasive Pacific oysters displacing native species",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "dk-climate-1",
+        type: "climate",
+        severity: "medium",
+        trend: "increasing",
+        impact: 55,
+        affected_species: ["Arctic species", "Temperate migrants"],
+        description: "Changing water temperatures affecting species ranges",
+        last_updated: "2024-01-10"
+      },
+      {
+        id: "dk-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 45,
+        affected_species: ["Marine mammals", "Seabirds"],
+        description: "Heavy shipping traffic in Danish straits",
+        last_updated: "2024-01-15"
       }
     ],
     overall_risk: 35,
@@ -185,7 +375,7 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "decreasing",
         impact: 55,
-        affected_species: ["Atlantic Cod", "Herring"],
+        affected_species: ["Atlantic Cod", "Herring", "Capelin", "Haddock"],
         description: "Sustainable fishing practices improving",
         last_updated: "2024-01-12"
       },
@@ -195,9 +385,49 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 70,
-        affected_species: ["Arctic terns", "Puffins"],
+        affected_species: ["Arctic terns", "Puffins", "Guillemots", "Kittiwakes"],
         description: "Changing ocean temperatures affecting fish migration",
         last_updated: "2024-01-09"
+      },
+      {
+        id: "is-volcanic-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 45,
+        affected_species: ["Seabirds", "Marine plankton", "Kelp forests"],
+        description: "Volcanic ash deposits affecting marine ecosystems",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "is-whaling-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Minke whales", "Fin whales", "Marine mammals"],
+        description: "Commercial whaling activities",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "is-invasive-1",
+        type: "invasive",
+        severity: "low",
+        trend: "increasing",
+        impact: 30,
+        affected_species: ["Native algae", "Shellfish"],
+        description: "Invasive marine species from shipping",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "is-acidification-1",
+        type: "acidification",
+        severity: "high",
+        trend: "increasing",
+        impact: 65,
+        affected_species: ["Pteropods", "Shell-forming plankton", "Arctic char"],
+        description: "Arctic ocean acidification affecting calcifying organisms",
+        last_updated: "2024-01-10"
       }
     ],
     overall_risk: 52,
@@ -220,7 +450,7 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "stable",
         impact: 70,
-        affected_species: ["Seabirds", "Marine mammals"],
+        affected_species: ["Seabirds", "Marine mammals", "Gannets", "Fulmar"],
         description: "Plastic pollution in coastal waters",
         last_updated: "2024-01-14"
       },
@@ -230,7 +460,7 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "increasing",
         impact: 60,
-        affected_species: ["Coastal fish", "Seagrass"],
+        affected_species: ["Coastal fish", "Seagrass", "Razorbill", "Puffins"],
         description: "Coastal development pressure",
         last_updated: "2024-01-13"
       },
@@ -240,9 +470,59 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 75,
-        affected_species: ["Coral reefs", "Kelp forests"],
+        affected_species: ["Coral reefs", "Kelp forests", "Cold-water corals", "Sea fans"],
         description: "Ocean warming affecting marine ecosystems",
         last_updated: "2024-01-10"
+      },
+      {
+        id: "uk-fishing-1",
+        type: "overfishing",
+        severity: "high",
+        trend: "stable",
+        impact: 80,
+        affected_species: ["Cod", "Haddock", "Sole", "Plaice", "Skates", "Rays"],
+        description: "Overfishing depleting commercial fish stocks",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "uk-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["Whales", "Dolphins", "Porpoises", "Seals"],
+        description: "Heavy shipping traffic causing noise pollution",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "uk-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 50,
+        affected_species: ["Chinese mitten crab", "Japanese knotweed", "Native species"],
+        description: "Invasive species threatening native marine life",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "uk-sewage-1",
+        type: "pollution",
+        severity: "high",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Marine bacteria", "Shellfish", "Coastal ecosystems"],
+        description: "Sewage overflow events contaminating coastal waters",
+        last_updated: "2024-01-16"
+      },
+      {
+        id: "uk-acidification-1",
+        type: "acidification",
+        severity: "medium",
+        trend: "increasing",
+        impact: 60,
+        affected_species: ["Mussels", "Oysters", "Sea urchins", "Barnacles"],
+        description: "Ocean acidification affecting shell-forming species",
+        last_updated: "2024-01-09"
       }
     ],
     overall_risk: 68,
@@ -263,7 +543,7 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "stable",
         impact: 50,
-        affected_species: ["Mackerel", "Haddock"],
+        affected_species: ["Mackerel", "Haddock", "Herring", "Whiting"],
         description: "Commercial fishing pressure",
         last_updated: "2024-01-15"
       },
@@ -273,9 +553,49 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "decreasing",
         impact: 45,
-        affected_species: ["Dolphins", "Seabirds"],
+        affected_species: ["Dolphins", "Seabirds", "Harbor porpoises", "Minke whales"],
         description: "Marine litter reduction efforts showing progress",
         last_updated: "2024-01-12"
+      },
+      {
+        id: "ie-salmon-1",
+        type: "overfishing",
+        severity: "high",
+        trend: "increasing",
+        impact: 75,
+        affected_species: ["Atlantic salmon", "Sea trout", "Celtic sea bass"],
+        description: "Salmon farming affecting wild populations",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "ie-climate-1",
+        type: "climate",
+        severity: "medium",
+        trend: "increasing",
+        impact: 55,
+        affected_species: ["Basking sharks", "Puffins", "Storm petrels"],
+        description: "Changing ocean currents affecting species distribution",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "ie-coastal-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "stable",
+        impact: 40,
+        affected_species: ["Kelp forests", "Seabirds", "Coastal fish"],
+        description: "Coastal erosion affecting marine habitats",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "ie-invasive-1",
+        type: "invasive",
+        severity: "low",
+        trend: "increasing",
+        impact: 35,
+        affected_species: ["Carpet sea squirt", "Native filter feeders"],
+        description: "Invasive tunicate species spreading",
+        last_updated: "2024-01-10"
       }
     ],
     overall_risk: 44,
@@ -296,7 +616,7 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "increasing",
         impact: 45,
-        affected_species: ["Native shellfish", "Seaweed"],
+        affected_species: ["Native shellfish", "Seaweed", "Caulerpa taxifolia", "Asian shore crab"],
         description: "Invasive species from shipping",
         last_updated: "2024-01-09"
       },
@@ -306,9 +626,59 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "stable",
         impact: 65,
-        affected_species: ["Mediterranean fish", "Coastal birds"],
+        affected_species: ["Mediterranean fish", "Coastal birds", "Sea grass", "Dolphins"],
         description: "Agricultural runoff and industrial pollution",
         last_updated: "2024-01-14"
+      },
+      {
+        id: "fr-tourism-1",
+        type: "coastal",
+        severity: "high",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Posidonia meadows", "Mediterranean monk seal", "Loggerhead turtles"],
+        description: "Mass tourism pressuring coastal ecosystems",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "fr-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["Bluefin tuna", "European sea bass", "Sole", "Anchovy"],
+        description: "Commercial fishing in Atlantic and Mediterranean",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "fr-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 75,
+        affected_species: ["Coral reefs", "Endemic Mediterranean species", "Cold-water corals"],
+        description: "Mediterranean warming faster than global average",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "fr-plastic-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Seabirds", "Marine turtles", "Cetaceans"],
+        description: "Plastic debris from major river systems",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "fr-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 45,
+        affected_species: ["Sperm whales", "Pilot whales", "Striped dolphins"],
+        description: "Heavy shipping traffic in Mediterranean corridors",
+        last_updated: "2024-01-10"
       }
     ],
     overall_risk: 58,
@@ -329,7 +699,7 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 80,
-        affected_species: ["Mediterranean fish", "Coral communities"],
+        affected_species: ["Mediterranean fish", "Coral communities", "Red coral", "Gorgonians"],
         description: "Rising sea temperatures in Mediterranean",
         last_updated: "2024-01-11"
       },
@@ -339,7 +709,7 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "stable",
         impact: 50,
-        affected_species: ["Bluefin tuna", "Sardines"],
+        affected_species: ["Bluefin tuna", "Sardines", "Anchovies", "European hake"],
         description: "Commercial fishing pressure",
         last_updated: "2024-01-16"
       },
@@ -349,9 +719,59 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 70,
-        affected_species: ["Posidonia seagrass", "Coastal fish"],
+        affected_species: ["Posidonia seagrass", "Coastal fish", "Mediterranean monk seal", "Loggerhead turtles"],
         description: "Tourism development on coastlines",
         last_updated: "2024-01-08"
+      },
+      {
+        id: "es-pollution-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 65,
+        affected_species: ["Striped dolphins", "Pilot whales", "Fin whales"],
+        description: "Industrial and urban pollution in Mediterranean",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "es-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 55,
+        affected_species: ["Caulerpa cylindracea", "Native seaweed", "Benthic communities"],
+        description: "Invasive algae spreading in Mediterranean",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "es-acidification-1",
+        type: "acidification",
+        severity: "medium",
+        trend: "increasing",
+        impact: 50,
+        affected_species: ["Mussels", "Sea urchins", "Calcifying plankton"],
+        description: "Ocean acidification affecting shell-forming organisms",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "es-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 45,
+        affected_species: ["Sperm whales", "Cuvier's beaked whales", "Risso's dolphins"],
+        description: "Heavy maritime traffic in shipping lanes",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "es-aquaculture-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 40,
+        affected_species: ["Wild fish", "Seagrass beds", "Coastal ecosystems"],
+        description: "Intensive aquaculture affecting coastal environments",
+        last_updated: "2024-01-10"
       }
     ],
     overall_risk: 72,
@@ -372,7 +792,7 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "stable",
         impact: 75,
-        affected_species: ["Sardines", "Octopus"],
+        affected_species: ["Sardines", "Octopus", "Mackerel", "Horse mackerel"],
         description: "Intensive fishing in Atlantic waters",
         last_updated: "2024-01-13"
       },
@@ -382,9 +802,59 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "increasing",
         impact: 55,
-        affected_species: ["Tuna", "Sea turtles"],
+        affected_species: ["Tuna", "Sea turtles", "Loggerhead turtles", "Leatherback turtles"],
         description: "Ocean warming affecting migration patterns",
         last_updated: "2024-01-10"
+      },
+      {
+        id: "pt-upwelling-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Sardines", "Anchovies", "Coastal fish", "Seabirds"],
+        description: "Changes in upwelling patterns affecting productivity",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "pt-coastal-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 50,
+        affected_species: ["Rocky shore species", "Kelp forests", "Coastal birds"],
+        description: "Coastal development and erosion",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "pt-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 45,
+        affected_species: ["Dolphins", "Whales", "Seabirds"],
+        description: "River pollution affecting coastal waters",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "pt-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 40,
+        affected_species: ["Asian date mussel", "Native bivalves"],
+        description: "Invasive mollusks competing with native species",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "pt-aquaculture-1",
+        type: "coastal",
+        severity: "low",
+        trend: "increasing",
+        impact: 35,
+        affected_species: ["Wild salmon", "Sea bream", "Sea bass"],
+        description: "Fish farming escapes affecting wild populations",
+        last_updated: "2024-01-16"
       }
     ],
     overall_risk: 62,
@@ -405,7 +875,7 @@ const europeanCountries: CountryData[] = [
         severity: "critical",
         trend: "increasing",
         impact: 90,
-        affected_species: ["Wadden Sea life", "Coastal birds"],
+        affected_species: ["Wadden Sea life", "Coastal birds", "Harbor seals", "Gray seals"],
         description: "Sea level rise threatening coastal ecosystems",
         last_updated: "2024-01-12"
       },
@@ -415,9 +885,59 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "decreasing",
         impact: 40,
-        affected_species: ["Harbor seals", "Porpoises"],
+        affected_species: ["Harbor seals", "Harbor porpoises", "Common eider"],
         description: "Industrial pollution reduction efforts",
         last_updated: "2024-01-15"
+      },
+      {
+        id: "nl-fishing-1",
+        type: "overfishing",
+        severity: "high",
+        trend: "stable",
+        impact: 75,
+        affected_species: ["Sole", "Plaice", "Cod", "Whiting", "Bottom fish"],
+        description: "Intensive bottom trawling in North Sea",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "nl-wind-farms-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 50,
+        affected_species: ["Seabirds", "Marine mammals", "Fish migrations"],
+        description: "Large-scale offshore wind farm development",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "nl-nitrogen-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 70,
+        affected_species: ["Wadden Sea filter feeders", "Shellfish", "Seagrass"],
+        description: "Agricultural nitrogen affecting marine ecosystems",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "nl-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["Japanese oyster", "Native oyster beds"],
+        description: "Invasive Pacific oysters dominating shellfish beds",
+        last_updated: "2024-01-16"
+      },
+      {
+        id: "nl-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["Harbor porpoises", "Seals", "Migratory fish"],
+        description: "Heavy shipping traffic in major ports",
+        last_updated: "2024-01-10"
       }
     ],
     overall_risk: 68,
@@ -438,9 +958,59 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "stable",
         impact: 70,
-        affected_species: ["Marine mammals", "Seabirds"],
+        affected_species: ["Marine mammals", "Seabirds", "Harbor porpoises", "Gray seals"],
         description: "Heavy shipping traffic pollution",
         last_updated: "2024-01-14"
+      },
+      {
+        id: "be-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 60,
+        affected_species: ["Sole", "Plaice", "Cod", "Whiting"],
+        description: "Intensive beam trawling in North Sea",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "be-sand-extraction-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 55,
+        affected_species: ["Benthic fauna", "Fish nurseries", "Sandeel"],
+        description: "Marine sand extraction affecting seafloor",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "be-pollution-2",
+        type: "pollution",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 50,
+        affected_species: ["Shellfish", "Coastal fish", "Marine invertebrates"],
+        description: "Chemical pollution from industrial sources",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "be-climate-1",
+        type: "climate",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["North Sea fish", "Migratory species"],
+        description: "Changing water temperatures affecting species distribution",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "be-invasive-1",
+        type: "invasive",
+        severity: "low",
+        trend: "increasing",
+        impact: 35,
+        affected_species: ["American razor clam", "Native bivalves"],
+        description: "Invasive mollusks establishing populations",
+        last_updated: "2024-01-16"
       }
     ],
     overall_risk: 58,
@@ -461,7 +1031,7 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "stable",
         impact: 55,
-        affected_species: ["Baltic fish", "Marine birds"],
+        affected_species: ["Baltic fish", "Marine birds", "Harbor seals", "Gray seals"],
         description: "Agricultural runoff in Baltic Sea",
         last_updated: "2024-01-11"
       },
@@ -471,9 +1041,59 @@ const europeanCountries: CountryData[] = [
         severity: "low",
         trend: "increasing",
         impact: 30,
-        affected_species: ["Marine mammals"],
+        affected_species: ["Marine mammals", "Seabirds", "Fish migrations"],
         description: "Offshore wind farm development",
         last_updated: "2024-01-16"
+      },
+      {
+        id: "de-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 65,
+        affected_species: ["Cod", "Herring", "Sprat", "Flounder"],
+        description: "Commercial fishing in North and Baltic Seas",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "de-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Harbor porpoises", "Seals", "Migratory fish"],
+        description: "Heavy shipping traffic in major ports",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "de-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["Round goby", "Native fish species"],
+        description: "Invasive fish species from ballast water",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "de-climate-1",
+        type: "climate",
+        severity: "medium",
+        trend: "increasing",
+        impact: 60,
+        affected_species: ["Cold-water species", "Arctic migrants"],
+        description: "Warming seas affecting northern species",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "de-acidification-1",
+        type: "acidification",
+        severity: "medium",
+        trend: "increasing",
+        impact: 40,
+        affected_species: ["Mussels", "Barnacles", "Calcifying plankton"],
+        description: "Ocean acidification in North Sea",
+        last_updated: "2024-01-10"
       }
     ],
     overall_risk: 42,
@@ -496,7 +1116,7 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 75,
-        affected_species: ["Shellfish", "Coral"],
+        affected_species: ["Shellfish", "Coral", "Red coral", "Mediterranean mussels"],
         description: "Ocean acidification in Mediterranean",
         last_updated: "2024-01-08"
       },
@@ -506,9 +1126,69 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "stable",
         impact: 70,
-        affected_species: ["Dolphins", "Sea turtles"],
+        affected_species: ["Dolphins", "Sea turtles", "Sperm whales", "Fin whales"],
         description: "Plastic and chemical pollution",
         last_updated: "2024-01-12"
+      },
+      {
+        id: "it-fishing-1",
+        type: "overfishing",
+        severity: "high",
+        trend: "stable",
+        impact: 80,
+        affected_species: ["Bluefin tuna", "Swordfish", "European anchovy", "Sardines"],
+        description: "Intensive fishing depleting Mediterranean stocks",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "it-tourism-1",
+        type: "coastal",
+        severity: "high",
+        trend: "increasing",
+        impact: 85,
+        affected_species: ["Posidonia meadows", "Coastal fish", "Loggerhead turtles"],
+        description: "Mass tourism destroying coastal habitats",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "it-climate-1",
+        type: "climate",
+        severity: "critical",
+        trend: "increasing",
+        impact: 90,
+        affected_species: ["Mediterranean endemic species", "Cold-water corals", "Deep-sea fish"],
+        description: "Rapid Mediterranean warming and marine heatwaves",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "it-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 55,
+        affected_species: ["Caulerpa racemosa", "Native algae", "Benthic communities"],
+        description: "Invasive species from Suez Canal and shipping",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "it-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 60,
+        affected_species: ["Cetaceans", "Seabirds", "Marine mammals"],
+        description: "Heavy maritime traffic in Mediterranean corridors",
+        last_updated: "2024-01-16"
+      },
+      {
+        id: "it-aquaculture-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 50,
+        affected_species: ["Wild fish", "Seagrass beds", "Benthic fauna"],
+        description: "Intensive aquaculture affecting coastal waters",
+        last_updated: "2024-01-10"
       }
     ],
     overall_risk: 68,
@@ -529,7 +1209,7 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 80,
-        affected_species: ["Posidonia meadows", "Monk seals"],
+        affected_species: ["Posidonia meadows", "Mediterranean monk seal", "Caretta caretta turtles"],
         description: "Tourism pressure on coastal ecosystems",
         last_updated: "2024-01-09"
       },
@@ -539,7 +1219,7 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "stable",
         impact: 60,
-        affected_species: ["Mediterranean fish", "Octopus"],
+        affected_species: ["Mediterranean fish", "Octopus", "Red mullet", "Sea bream"],
         description: "Traditional and commercial fishing pressure",
         last_updated: "2024-01-13"
       },
@@ -549,9 +1229,49 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 75,
-        affected_species: ["Coral communities", "Endemic fish"],
+        affected_species: ["Coral communities", "Endemic fish", "Aegean Sea species"],
         description: "Mediterranean warming and marine heatwaves",
         last_updated: "2024-01-10"
+      },
+      {
+        id: "gr-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 65,
+        affected_species: ["Dolphins", "Seabirds", "Coastal fish"],
+        description: "Plastic pollution and sewage discharge",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "gr-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["Sperm whales", "Striped dolphins", "Cuvier's beaked whales"],
+        description: "Major shipping routes through Greek waters",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "gr-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 50,
+        affected_species: ["Lessepsian migrants", "Native Mediterranean species"],
+        description: "Red Sea species invading through Suez Canal",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "gr-acidification-1",
+        type: "acidification",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["Shellfish", "Sea urchins", "Calcifying organisms"],
+        description: "Ocean acidification affecting marine calcifiers",
+        last_updated: "2024-01-15"
       }
     ],
     overall_risk: 74,
@@ -572,8 +1292,8 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 78,
-        affected_species: ["Sea turtles", "Seagrass"],
-        description: "Extreme heat affecting nesting beaches",
+        affected_species: ["Green turtles", "Loggerhead turtles", "Posidonia seagrass", "Mediterranean monk seal"],
+        description: "Extreme heat affecting nesting beaches and marine life",
         last_updated: "2024-01-11"
       },
       {
@@ -582,9 +1302,39 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "increasing",
         impact: 65,
-        affected_species: ["Coastal fish", "Marine vegetation"],
+        affected_species: ["Coastal fish", "Marine vegetation", "Endemic cyprinids"],
         description: "Tourism development on coastlines",
         last_updated: "2024-01-14"
+      },
+      {
+        id: "cy-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["Mediterranean fish", "Cetaceans", "Seabirds"],
+        description: "Land-based pollution affecting coastal waters",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "cy-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Sea bream", "Grouper", "Red mullet"],
+        description: "Small-scale but intensive fishing around island",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "cy-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["Lessepsian migrants", "Native fish", "Indo-Pacific species"],
+        description: "Red Sea species invasion through Suez Canal",
+        last_updated: "2024-01-15"
       }
     ],
     overall_risk: 68,
@@ -605,8 +1355,8 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "stable",
         impact: 80,
-        affected_species: ["Bluefin tuna", "Swordfish"],
-        description: "Intensive fishing around small island",
+        affected_species: ["Bluefin tuna", "Swordfish", "Dolphinfish", "Atlantic bluefin"],
+        description: "Intensive fishing around small island depleting stocks",
         last_updated: "2024-01-12"
       },
       {
@@ -615,9 +1365,39 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "increasing",
         impact: 70,
-        affected_species: ["Endemic fish", "Rocky shore life"],
+        affected_species: ["Endemic fish", "Rocky shore life", "Mediterranean starfish"],
         description: "Limited coastline under development pressure",
         last_updated: "2024-01-15"
+      },
+      {
+        id: "mt-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 60,
+        affected_species: ["Seabirds", "Marine turtles", "Dolphins"],
+        description: "Marine litter and sewage in small island waters",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "mt-aquaculture-1",
+        type: "coastal",
+        severity: "high",
+        trend: "increasing",
+        impact: 75,
+        affected_species: ["Wild tuna", "Benthic communities", "Native fish"],
+        description: "Intensive tuna farming in limited coastal space",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "mt-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Subtropical fish", "Endemic species", "Coral communities"],
+        description: "Rapid Mediterranean warming affecting island ecosystems",
+        last_updated: "2024-01-11"
       }
     ],
     overall_risk: 72,
@@ -638,7 +1418,7 @@ const europeanCountries: CountryData[] = [
         severity: "high",
         trend: "increasing",
         impact: 75,
-        affected_species: ["Adriatic fish", "Seagrass beds"],
+        affected_species: ["Adriatic fish", "Seagrass beds", "Bottlenose dolphins", "Loggerhead turtles"],
         description: "Massive tourism growth impacting Adriatic coast",
         last_updated: "2024-01-13"
       },
@@ -648,9 +1428,39 @@ const europeanCountries: CountryData[] = [
         severity: "medium",
         trend: "stable",
         impact: 50,
-        affected_species: ["Dolphins", "Sea turtles"],
+        affected_species: ["Dolphins", "Sea turtles", "Adriatic sturgeon", "Brown meagre"],
         description: "Marine litter and wastewater issues",
         last_updated: "2024-01-10"
+      },
+      {
+        id: "hr-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["European pilchard", "Anchovy", "Adriatic hake"],
+        description: "Commercial fishing pressure in Adriatic",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "hr-invasive-1",
+        type: "invasive",
+        severity: "low",
+        trend: "increasing",
+        impact: 35,
+        affected_species: ["Blue crab", "Native crustaceans"],
+        description: "Invasive species establishing in Adriatic waters",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "hr-climate-1",
+        type: "climate",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["Cold-water fish", "Temperate species"],
+        description: "Adriatic warming affecting fish distributions",
+        last_updated: "2024-01-15"
       }
     ],
     overall_risk: 58,
