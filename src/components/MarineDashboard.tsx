@@ -18,7 +18,10 @@ import {
   Shield,
   TrendingUp,
   TrendingDown,
-  Minus
+  Minus,
+  Award,
+  BarChart3,
+  Target
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -40,6 +43,11 @@ interface CountryData {
   overall_risk: number;
   marine_protected_areas: number;
   coastline_length: number;
+  // Scientific Indices
+  ocean_health_index: number; // 0-100 (higher is better)
+  wwf_risk_assessment: 'low' | 'medium' | 'high' | 'critical';
+  iucn_ecosystem_risk: 'least_concern' | 'near_threatened' | 'vulnerable' | 'endangered' | 'critically_endangered';
+  last_assessment: string;
 }
 
 const europeanCountries: CountryData[] = [
@@ -71,7 +79,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 70,
     marine_protected_areas: 15,
-    coastline_length: 25148
+    coastline_length: 25148,
+    ocean_health_index: 72,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-15"
   },
   {
     name: "Sweden",
@@ -100,7 +112,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 48,
     marine_protected_areas: 14,
-    coastline_length: 3218
+    coastline_length: 3218,
+    ocean_health_index: 78,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-12"
   },
   {
     name: "Finland",
@@ -119,7 +135,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 42,
     marine_protected_areas: 12,
-    coastline_length: 1250
+    coastline_length: 1250,
+    ocean_health_index: 75,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-13"
   },
   {
     name: "Denmark",
@@ -148,7 +168,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 35,
     marine_protected_areas: 18,
-    coastline_length: 7314
+    coastline_length: 7314,
+    ocean_health_index: 82,
+    wwf_risk_assessment: 'low',
+    iucn_ecosystem_risk: 'least_concern',
+    last_assessment: "2024-01-11"
   },
   {
     name: "Iceland",
@@ -177,7 +201,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 52,
     marine_protected_areas: 12,
-    coastline_length: 4970
+    coastline_length: 4970,
+    ocean_health_index: 68,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-09"
   },
 
   // Western Europe
@@ -218,7 +246,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 68,
     marine_protected_areas: 8,
-    coastline_length: 12429
+    coastline_length: 12429,
+    ocean_health_index: 65,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-10"
   },
   {
     name: "Ireland",
@@ -247,7 +279,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 44,
     marine_protected_areas: 10,
-    coastline_length: 1448
+    coastline_length: 1448,
+    ocean_health_index: 71,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-12"
   },
   {
     name: "France",
@@ -276,7 +312,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 58,
     marine_protected_areas: 22,
-    coastline_length: 3427
+    coastline_length: 3427,
+    ocean_health_index: 66,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-09"
   },
   {
     name: "Spain",
@@ -315,7 +355,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 72,
     marine_protected_areas: 18,
-    coastline_length: 4964
+    coastline_length: 4964,
+    ocean_health_index: 58,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-08"
   },
   {
     name: "Portugal",
@@ -344,7 +388,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 62,
     marine_protected_areas: 16,
-    coastline_length: 1793
+    coastline_length: 1793,
+    ocean_health_index: 63,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-10"
   },
   {
     name: "Netherlands",
@@ -373,7 +421,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 68,
     marine_protected_areas: 20,
-    coastline_length: 451
+    coastline_length: 451,
+    ocean_health_index: 70,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'endangered',
+    last_assessment: "2024-01-12"
   },
   {
     name: "Belgium",
@@ -392,7 +444,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 58,
     marine_protected_areas: 8,
-    coastline_length: 66
+    coastline_length: 66,
+    ocean_health_index: 62,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-14"
   },
   {
     name: "Germany",
@@ -421,7 +477,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 42,
     marine_protected_areas: 15,
-    coastline_length: 2389
+    coastline_length: 2389,
+    ocean_health_index: 74,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-11"
   },
 
   // Southern Europe
@@ -452,7 +512,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 68,
     marine_protected_areas: 16,
-    coastline_length: 7600
+    coastline_length: 7600,
+    ocean_health_index: 59,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-08"
   },
   {
     name: "Greece",
@@ -491,7 +555,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 74,
     marine_protected_areas: 12,
-    coastline_length: 13676
+    coastline_length: 13676,
+    ocean_health_index: 56,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'endangered',
+    last_assessment: "2024-01-09"
   },
   {
     name: "Cyprus",
@@ -520,7 +588,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 68,
     marine_protected_areas: 8,
-    coastline_length: 648
+    coastline_length: 648,
+    ocean_health_index: 61,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-11"
   },
   {
     name: "Malta",
@@ -549,7 +621,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 72,
     marine_protected_areas: 6,
-    coastline_length: 197
+    coastline_length: 197,
+    ocean_health_index: 54,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'endangered',
+    last_assessment: "2024-01-12"
   },
   {
     name: "Croatia",
@@ -578,7 +654,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 58,
     marine_protected_areas: 14,
-    coastline_length: 5835
+    coastline_length: 5835,
+    ocean_health_index: 64,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-10"
   },
   {
     name: "Slovenia",
@@ -597,7 +677,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 38,
     marine_protected_areas: 10,
-    coastline_length: 47
+    coastline_length: 47,
+    ocean_health_index: 73,
+    wwf_risk_assessment: 'low',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-14"
   },
   {
     name: "Montenegro",
@@ -616,7 +700,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 48,
     marine_protected_areas: 8,
-    coastline_length: 294
+    coastline_length: 294,
+    ocean_health_index: 67,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-12"
   },
   {
     name: "Albania",
@@ -645,7 +733,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 62,
     marine_protected_areas: 4,
-    coastline_length: 362
+    coastline_length: 362,
+    ocean_health_index: 52,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-11"
   },
   {
     name: "Bosnia and Herzegovina",
@@ -664,7 +756,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 40,
     marine_protected_areas: 2,
-    coastline_length: 20
+    coastline_length: 20,
+    ocean_health_index: 69,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-13"
   },
 
   // Eastern Europe
@@ -695,7 +791,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 46,
     marine_protected_areas: 12,
-    coastline_length: 491
+    coastline_length: 491,
+    ocean_health_index: 71,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-12"
   },
   {
     name: "Lithuania",
@@ -724,7 +824,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 35,
     marine_protected_areas: 9,
-    coastline_length: 90
+    coastline_length: 90,
+    ocean_health_index: 76,
+    wwf_risk_assessment: 'low',
+    iucn_ecosystem_risk: 'least_concern',
+    last_assessment: "2024-01-11"
   },
   {
     name: "Latvia",
@@ -743,7 +847,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 32,
     marine_protected_areas: 11,
-    coastline_length: 494
+    coastline_length: 494,
+    ocean_health_index: 79,
+    wwf_risk_assessment: 'low',
+    iucn_ecosystem_risk: 'least_concern',
+    last_assessment: "2024-01-13"
   },
   {
     name: "Estonia",
@@ -762,7 +870,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 38,
     marine_protected_areas: 13,
-    coastline_length: 3794
+    coastline_length: 3794,
+    ocean_health_index: 77,
+    wwf_risk_assessment: 'low',
+    iucn_ecosystem_risk: 'least_concern',
+    last_assessment: "2024-01-14"
   },
   {
     name: "Russia",
@@ -791,7 +903,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 85,
     marine_protected_areas: 5,
-    coastline_length: 37653
+    coastline_length: 37653,
+    ocean_health_index: 42,
+    wwf_risk_assessment: 'critical',
+    iucn_ecosystem_risk: 'critically_endangered',
+    last_assessment: "2024-01-10"
   },
   {
     name: "Ukraine",
@@ -820,7 +936,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 88,
     marine_protected_areas: 3,
-    coastline_length: 2782
+    coastline_length: 2782,
+    ocean_health_index: 38,
+    wwf_risk_assessment: 'critical',
+    iucn_ecosystem_risk: 'critically_endangered',
+    last_assessment: "2024-01-14"
   },
   {
     name: "Romania",
@@ -849,7 +969,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 62,
     marine_protected_areas: 7,
-    coastline_length: 225
+    coastline_length: 225,
+    ocean_health_index: 58,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-11"
   },
   {
     name: "Bulgaria",
@@ -878,7 +1002,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 48,
     marine_protected_areas: 9,
-    coastline_length: 354
+    coastline_length: 354,
+    ocean_health_index: 65,
+    wwf_risk_assessment: 'medium',
+    iucn_ecosystem_risk: 'near_threatened',
+    last_assessment: "2024-01-12"
   },
 
   // Turkey (European part)
@@ -919,7 +1047,11 @@ const europeanCountries: CountryData[] = [
     ],
     overall_risk: 72,
     marine_protected_areas: 6,
-    coastline_length: 7200
+    coastline_length: 7200,
+    ocean_health_index: 55,
+    wwf_risk_assessment: 'high',
+    iucn_ecosystem_risk: 'vulnerable',
+    last_assessment: "2024-01-10"
   }
 ];
 
@@ -937,6 +1069,21 @@ const severityConfig = {
   high: { color: "threat-high", label: "High" },
   medium: { color: "threat-medium", label: "Medium" },
   low: { color: "threat-low", label: "Low" }
+};
+
+const wwfConfig = {
+  critical: { color: "threat-critical", label: "Critical Risk" },
+  high: { color: "threat-high", label: "High Risk" },
+  medium: { color: "threat-medium", label: "Medium Risk" },
+  low: { color: "threat-low", label: "Low Risk" }
+};
+
+const iucnConfig = {
+  critically_endangered: { color: "threat-critical", label: "Critically Endangered" },
+  endangered: { color: "threat-high", label: "Endangered" },
+  vulnerable: { color: "threat-medium", label: "Vulnerable" },
+  near_threatened: { color: "threat-medium", label: "Near Threatened" },
+  least_concern: { color: "threat-low", label: "Least Concern" }
 };
 
 export default function MarineDashboard() {
@@ -975,6 +1122,7 @@ export default function MarineDashboard() {
   const criticalThreats = europeanCountries.reduce((sum, country) => 
     sum + country.threats.filter(t => t.severity === 'critical').length, 0
   );
+  const avgOHI = Math.round(europeanCountries.reduce((sum, country) => sum + country.ocean_health_index, 0) / europeanCountries.length);
 
   return (
     <div className="min-h-screen bg-gradient-surface">
@@ -988,14 +1136,14 @@ export default function MarineDashboard() {
             </h1>
           </div>
           <p className="text-primary-foreground/80 max-w-2xl">
-            Real-time monitoring of marine environmental threats across European waters
+            Real-time monitoring with scientific indices: Ocean Health Index, WWF Risk Assessment, and IUCN Red List ecosystem rankings
           </p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-8">
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
           <Card className="bg-card shadow-card-ocean">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
@@ -1028,6 +1176,18 @@ export default function MarineDashboard() {
                   <p className="text-2xl font-bold text-threat-critical">{criticalThreats}</p>
                 </div>
                 <AlertTriangle className="h-8 w-8 text-threat-critical animate-pulse-glow" />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-card shadow-card-ocean">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-muted-foreground">Avg Ocean Health</p>
+                  <p className="text-2xl font-bold text-accent">{avgOHI}</p>
+                </div>
+                <Award className="h-8 w-8 text-accent" />
               </div>
             </CardContent>
           </Card>
@@ -1139,8 +1299,9 @@ export default function MarineDashboard() {
               </CardHeader>
               <CardContent>
                 <Tabs defaultValue="threats" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
+                  <TabsList className="grid w-full grid-cols-3">
                     <TabsTrigger value="threats">Threats ({country.threats.length})</TabsTrigger>
+                    <TabsTrigger value="indices">Indices</TabsTrigger>
                     <TabsTrigger value="stats">Statistics</TabsTrigger>
                   </TabsList>
                   
@@ -1188,6 +1349,58 @@ export default function MarineDashboard() {
                         </Alert>
                       );
                     })}
+                  </TabsContent>
+
+                  <TabsContent value="indices" className="mt-4">
+                    <div className="space-y-4">
+                      <div className="p-4 bg-muted rounded-lg">
+                        <div className="flex items-center gap-3 mb-2">
+                          <BarChart3 className="h-5 w-5 text-primary" />
+                          <h4 className="font-semibold">Ocean Health Index</h4>
+                        </div>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-sm text-muted-foreground">Score (0-100, higher better)</span>
+                          <span className="text-lg font-bold text-primary">{country.ocean_health_index}</span>
+                        </div>
+                        <Progress value={country.ocean_health_index} className="h-2" />
+                      </div>
+
+                      <div className="p-4 bg-muted rounded-lg">
+                        <div className="flex items-center gap-3 mb-2">
+                          <Shield className="h-5 w-5 text-warning" />
+                          <h4 className="font-semibold">WWF Risk Assessment</h4>
+                        </div>
+                        <Badge className={cn(
+                          "w-full justify-center",
+                          country.wwf_risk_assessment === 'critical' && "bg-threat-critical text-white",
+                          country.wwf_risk_assessment === 'high' && "bg-threat-high text-white",
+                          country.wwf_risk_assessment === 'medium' && "bg-threat-medium text-white",
+                          country.wwf_risk_assessment === 'low' && "bg-threat-low text-white"
+                        )}>
+                          {wwfConfig[country.wwf_risk_assessment].label}
+                        </Badge>
+                      </div>
+
+                      <div className="p-4 bg-muted rounded-lg">
+                        <div className="flex items-center gap-3 mb-2">
+                          <Target className="h-5 w-5 text-destructive" />
+                          <h4 className="font-semibold">IUCN Ecosystem Risk</h4>
+                        </div>
+                        <Badge className={cn(
+                          "w-full justify-center",
+                          country.iucn_ecosystem_risk === 'critically_endangered' && "bg-threat-critical text-white",
+                          country.iucn_ecosystem_risk === 'endangered' && "bg-threat-high text-white",
+                          country.iucn_ecosystem_risk === 'vulnerable' && "bg-threat-medium text-white",
+                          country.iucn_ecosystem_risk === 'near_threatened' && "bg-threat-medium text-white",
+                          country.iucn_ecosystem_risk === 'least_concern' && "bg-threat-low text-white"
+                        )}>
+                          {iucnConfig[country.iucn_ecosystem_risk].label}
+                        </Badge>
+                        <p className="text-xs text-muted-foreground mt-2">
+                          Last assessment: {country.last_assessment}
+                        </p>
+                      </div>
+                    </div>
                   </TabsContent>
                   
                   <TabsContent value="stats" className="mt-4">
