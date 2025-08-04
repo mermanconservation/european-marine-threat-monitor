@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,12 +12,14 @@ import {
   Shield,
   Copy,
   ExternalLink,
-  CheckCircle
+  CheckCircle,
+  ArrowLeft
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export default function DonationPage() {
+  const navigate = useNavigate();
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const copyToClipboard = async (text: string, field: string) => {
@@ -42,6 +45,16 @@ export default function DonationPage() {
       {/* Header */}
       <div className="bg-gradient-ocean border-b border-border">
         <div className="container mx-auto px-4 py-12">
+          <div className="flex items-center justify-between mb-8">
+            <Button
+              onClick={() => navigate('/')}
+              variant="outline"
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Dashboard
+            </Button>
+          </div>
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
               <Heart className="h-10 w-10 text-coral animate-pulse-glow" />
