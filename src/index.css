@@ -8,33 +8,65 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 20% 98%;
+    --foreground: 210 40% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 200 85% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 190 50% 92%;
+    --secondary-foreground: 200 30% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 190 30% 95%;
+    --muted-foreground: 200 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 180 70% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --warning: 35 91% 65%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 140 76% 47%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 190 30% 88%;
+    --input: 190 30% 88%;
+    --ring: 200 85% 45%;
+
+    /* Marine-specific colors */
+    --ocean-deep: 200 95% 20%;
+    --ocean-medium: 200 85% 45%;
+    --ocean-light: 190 70% 85%;
+    --coral: 15 90% 65%;
+    --seaweed: 140 60% 40%;
+    
+    /* Threat severity colors */
+    --threat-critical: 0 84% 55%;
+    --threat-high: 25 95% 53%;
+    --threat-medium: 35 91% 65%;
+    --threat-low: 140 76% 47%;
+    
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-medium)));
+    --gradient-surface: linear-gradient(180deg, hsl(var(--ocean-light)), hsl(var(--background)));
+    --gradient-depth: linear-gradient(to bottom, hsl(var(--ocean-medium)), hsl(var(--ocean-deep)));
+    
+    /* Shadows */
+    --shadow-ocean: 0 10px 40px -10px hsl(var(--ocean-medium) / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(var(--ocean-deep) / 0.1);
+    
+    /* Animations */
+    --transition-wave: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
