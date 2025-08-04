@@ -43,6 +43,7 @@ interface CountryData {
 }
 
 const europeanCountries: CountryData[] = [
+  // Nordic Countries
   {
     name: "Norway",
     code: "NO",
@@ -73,6 +74,83 @@ const europeanCountries: CountryData[] = [
     coastline_length: 25148
   },
   {
+    name: "Sweden",
+    code: "SE",
+    threats: [
+      {
+        id: "se-algae-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["Baltic fish", "Seabirds"],
+        description: "Algal blooms in Baltic Sea",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "se-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 45,
+        affected_species: ["Herring", "Cod"],
+        description: "Improving sustainable fishing practices",
+        last_updated: "2024-01-14"
+      }
+    ],
+    overall_risk: 48,
+    marine_protected_areas: 14,
+    coastline_length: 3218
+  },
+  {
+    name: "Finland",
+    code: "FI",
+    threats: [
+      {
+        id: "fi-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Baltic seals", "Sea eagles"],
+        description: "Industrial runoff in Gulf of Finland",
+        last_updated: "2024-01-13"
+      }
+    ],
+    overall_risk: 42,
+    marine_protected_areas: 12,
+    coastline_length: 1250
+  },
+  {
+    name: "Denmark",
+    code: "DK",
+    threats: [
+      {
+        id: "dk-coastal-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 60,
+        affected_species: ["Coastal fish", "Seagrass beds"],
+        description: "Coastal development and land reclamation",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "dk-wind-1",
+        type: "pollution",
+        severity: "low",
+        trend: "decreasing",
+        impact: 25,
+        affected_species: ["Marine mammals"],
+        description: "Noise from offshore wind farms",
+        last_updated: "2024-01-16"
+      }
+    ],
+    overall_risk: 35,
+    marine_protected_areas: 18,
+    coastline_length: 7314
+  },
+  {
     name: "Iceland",
     code: "IS",
     threats: [
@@ -85,12 +163,24 @@ const europeanCountries: CountryData[] = [
         affected_species: ["Atlantic Cod", "Herring"],
         description: "Sustainable fishing practices improving",
         last_updated: "2024-01-12"
+      },
+      {
+        id: "is-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Arctic terns", "Puffins"],
+        description: "Changing ocean temperatures affecting fish migration",
+        last_updated: "2024-01-09"
       }
     ],
-    overall_risk: 45,
+    overall_risk: 52,
     marine_protected_areas: 12,
     coastline_length: 4970
   },
+
+  // Western Europe
   {
     name: "United Kingdom",
     code: "GB",
@@ -114,11 +204,79 @@ const europeanCountries: CountryData[] = [
         affected_species: ["Coastal fish", "Seagrass"],
         description: "Coastal development pressure",
         last_updated: "2024-01-13"
+      },
+      {
+        id: "uk-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 75,
+        affected_species: ["Coral reefs", "Kelp forests"],
+        description: "Ocean warming affecting marine ecosystems",
+        last_updated: "2024-01-10"
       }
     ],
-    overall_risk: 65,
+    overall_risk: 68,
     marine_protected_areas: 8,
     coastline_length: 12429
+  },
+  {
+    name: "Ireland",
+    code: "IE",
+    threats: [
+      {
+        id: "ie-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Mackerel", "Haddock"],
+        description: "Commercial fishing pressure",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "ie-plastic-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 45,
+        affected_species: ["Dolphins", "Seabirds"],
+        description: "Marine litter reduction efforts showing progress",
+        last_updated: "2024-01-12"
+      }
+    ],
+    overall_risk: 44,
+    marine_protected_areas: 10,
+    coastline_length: 1448
+  },
+  {
+    name: "France",
+    code: "FR",
+    threats: [
+      {
+        id: "fr-invasive-1",
+        type: "invasive",
+        severity: "medium",
+        trend: "increasing",
+        impact: 45,
+        affected_species: ["Native shellfish", "Seaweed"],
+        description: "Invasive species from shipping",
+        last_updated: "2024-01-09"
+      },
+      {
+        id: "fr-pollution-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 65,
+        affected_species: ["Mediterranean fish", "Coastal birds"],
+        description: "Agricultural runoff and industrial pollution",
+        last_updated: "2024-01-14"
+      }
+    ],
+    overall_risk: 58,
+    marine_protected_areas: 22,
+    coastline_length: 3427
   },
   {
     name: "Spain",
@@ -143,31 +301,130 @@ const europeanCountries: CountryData[] = [
         affected_species: ["Bluefin tuna", "Sardines"],
         description: "Commercial fishing pressure",
         last_updated: "2024-01-16"
+      },
+      {
+        id: "es-coastal-1",
+        type: "coastal",
+        severity: "high",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Posidonia seagrass", "Coastal fish"],
+        description: "Tourism development on coastlines",
+        last_updated: "2024-01-08"
       }
     ],
-    overall_risk: 58,
+    overall_risk: 72,
     marine_protected_areas: 18,
     coastline_length: 4964
   },
   {
-    name: "France",
-    code: "FR",
+    name: "Portugal",
+    code: "PT",
     threats: [
       {
-        id: "fr-invasive-1",
-        type: "invasive",
+        id: "pt-fishing-1",
+        type: "overfishing",
+        severity: "high",
+        trend: "stable",
+        impact: 75,
+        affected_species: ["Sardines", "Octopus"],
+        description: "Intensive fishing in Atlantic waters",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "pt-climate-1",
+        type: "climate",
         severity: "medium",
         trend: "increasing",
-        impact: 45,
-        affected_species: ["Native shellfish", "Seaweed"],
-        description: "Invasive species from shipping",
-        last_updated: "2024-01-09"
+        impact: 55,
+        affected_species: ["Tuna", "Sea turtles"],
+        description: "Ocean warming affecting migration patterns",
+        last_updated: "2024-01-10"
       }
     ],
-    overall_risk: 52,
-    marine_protected_areas: 22,
-    coastline_length: 3427
+    overall_risk: 62,
+    marine_protected_areas: 16,
+    coastline_length: 1793
   },
+  {
+    name: "Netherlands",
+    code: "NL",
+    threats: [
+      {
+        id: "nl-sea-level-1",
+        type: "climate",
+        severity: "critical",
+        trend: "increasing",
+        impact: 90,
+        affected_species: ["Wadden Sea life", "Coastal birds"],
+        description: "Sea level rise threatening coastal ecosystems",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "nl-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 40,
+        affected_species: ["Harbor seals", "Porpoises"],
+        description: "Industrial pollution reduction efforts",
+        last_updated: "2024-01-15"
+      }
+    ],
+    overall_risk: 68,
+    marine_protected_areas: 20,
+    coastline_length: 451
+  },
+  {
+    name: "Belgium",
+    code: "BE",
+    threats: [
+      {
+        id: "be-shipping-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 70,
+        affected_species: ["Marine mammals", "Seabirds"],
+        description: "Heavy shipping traffic pollution",
+        last_updated: "2024-01-14"
+      }
+    ],
+    overall_risk: 58,
+    marine_protected_areas: 8,
+    coastline_length: 66
+  },
+  {
+    name: "Germany",
+    code: "DE",
+    threats: [
+      {
+        id: "de-baltic-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["Baltic fish", "Marine birds"],
+        description: "Agricultural runoff in Baltic Sea",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "de-wind-1",
+        type: "coastal",
+        severity: "low",
+        trend: "increasing",
+        impact: 30,
+        affected_species: ["Marine mammals"],
+        description: "Offshore wind farm development",
+        last_updated: "2024-01-16"
+      }
+    ],
+    overall_risk: 42,
+    marine_protected_areas: 15,
+    coastline_length: 2389
+  },
+
+  // Southern Europe
   {
     name: "Italy",
     code: "IT",
@@ -181,11 +438,488 @@ const europeanCountries: CountryData[] = [
         affected_species: ["Shellfish", "Coral"],
         description: "Ocean acidification in Mediterranean",
         last_updated: "2024-01-08"
+      },
+      {
+        id: "it-pollution-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 70,
+        affected_species: ["Dolphins", "Sea turtles"],
+        description: "Plastic and chemical pollution",
+        last_updated: "2024-01-12"
       }
     ],
-    overall_risk: 63,
+    overall_risk: 68,
     marine_protected_areas: 16,
     coastline_length: 7600
+  },
+  {
+    name: "Greece",
+    code: "GR",
+    threats: [
+      {
+        id: "gr-tourism-1",
+        type: "coastal",
+        severity: "high",
+        trend: "increasing",
+        impact: 80,
+        affected_species: ["Posidonia meadows", "Monk seals"],
+        description: "Tourism pressure on coastal ecosystems",
+        last_updated: "2024-01-09"
+      },
+      {
+        id: "gr-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 60,
+        affected_species: ["Mediterranean fish", "Octopus"],
+        description: "Traditional and commercial fishing pressure",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "gr-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 75,
+        affected_species: ["Coral communities", "Endemic fish"],
+        description: "Mediterranean warming and marine heatwaves",
+        last_updated: "2024-01-10"
+      }
+    ],
+    overall_risk: 74,
+    marine_protected_areas: 12,
+    coastline_length: 13676
+  },
+  {
+    name: "Cyprus",
+    code: "CY",
+    threats: [
+      {
+        id: "cy-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 78,
+        affected_species: ["Sea turtles", "Seagrass"],
+        description: "Extreme heat affecting nesting beaches",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "cy-coastal-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 65,
+        affected_species: ["Coastal fish", "Marine vegetation"],
+        description: "Tourism development on coastlines",
+        last_updated: "2024-01-14"
+      }
+    ],
+    overall_risk: 68,
+    marine_protected_areas: 8,
+    coastline_length: 648
+  },
+  {
+    name: "Malta",
+    code: "MT",
+    threats: [
+      {
+        id: "mt-fishing-1",
+        type: "overfishing",
+        severity: "high",
+        trend: "stable",
+        impact: 80,
+        affected_species: ["Bluefin tuna", "Swordfish"],
+        description: "Intensive fishing around small island",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "mt-development-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Endemic fish", "Rocky shore life"],
+        description: "Limited coastline under development pressure",
+        last_updated: "2024-01-15"
+      }
+    ],
+    overall_risk: 72,
+    marine_protected_areas: 6,
+    coastline_length: 197
+  },
+  {
+    name: "Croatia",
+    code: "HR",
+    threats: [
+      {
+        id: "hr-tourism-1",
+        type: "coastal",
+        severity: "high",
+        trend: "increasing",
+        impact: 75,
+        affected_species: ["Adriatic fish", "Seagrass beds"],
+        description: "Massive tourism growth impacting Adriatic coast",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "hr-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Dolphins", "Sea turtles"],
+        description: "Marine litter and wastewater issues",
+        last_updated: "2024-01-10"
+      }
+    ],
+    overall_risk: 58,
+    marine_protected_areas: 14,
+    coastline_length: 5835
+  },
+  {
+    name: "Slovenia",
+    code: "SI",
+    threats: [
+      {
+        id: "si-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 45,
+        affected_species: ["Adriatic fish", "Coastal birds"],
+        description: "Industrial runoff improvement efforts",
+        last_updated: "2024-01-14"
+      }
+    ],
+    overall_risk: 38,
+    marine_protected_areas: 10,
+    coastline_length: 47
+  },
+  {
+    name: "Montenegro",
+    code: "ME",
+    threats: [
+      {
+        id: "me-tourism-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 60,
+        affected_species: ["Coastal marine life", "Seagrass"],
+        description: "Tourism development pressure",
+        last_updated: "2024-01-12"
+      }
+    ],
+    overall_risk: 48,
+    marine_protected_areas: 8,
+    coastline_length: 294
+  },
+  {
+    name: "Albania",
+    code: "AL",
+    threats: [
+      {
+        id: "al-pollution-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 70,
+        affected_species: ["Adriatic fish", "Marine mammals"],
+        description: "Inadequate wastewater treatment",
+        last_updated: "2024-01-11"
+      },
+      {
+        id: "al-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 55,
+        affected_species: ["Coastal fish", "Shellfish"],
+        description: "Unregulated fishing practices",
+        last_updated: "2024-01-15"
+      }
+    ],
+    overall_risk: 62,
+    marine_protected_areas: 4,
+    coastline_length: 362
+  },
+  {
+    name: "Bosnia and Herzegovina",
+    code: "BA",
+    threats: [
+      {
+        id: "ba-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 50,
+        affected_species: ["Coastal fish"],
+        description: "Limited coastal pollution from rivers",
+        last_updated: "2024-01-13"
+      }
+    ],
+    overall_risk: 40,
+    marine_protected_areas: 2,
+    coastline_length: 20
+  },
+
+  // Eastern Europe
+  {
+    name: "Poland",
+    code: "PL",
+    threats: [
+      {
+        id: "pl-baltic-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 50,
+        affected_species: ["Baltic fish", "Seabirds"],
+        description: "Industrial pollution reduction in Baltic Sea",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "pl-algae-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 45,
+        affected_species: ["Fish populations", "Marine birds"],
+        description: "Nutrient pollution causing algal blooms",
+        last_updated: "2024-01-12"
+      }
+    ],
+    overall_risk: 46,
+    marine_protected_areas: 12,
+    coastline_length: 491
+  },
+  {
+    name: "Lithuania",
+    code: "LT",
+    threats: [
+      {
+        id: "lt-amber-1",
+        type: "coastal",
+        severity: "low",
+        trend: "stable",
+        impact: 25,
+        affected_species: ["Coastal ecosystems"],
+        description: "Amber mining impact on coastline",
+        last_updated: "2024-01-15"
+      },
+      {
+        id: "lt-climate-1",
+        type: "climate",
+        severity: "medium",
+        trend: "increasing",
+        impact: 40,
+        affected_species: ["Baltic seals", "Coastal birds"],
+        description: "Baltic Sea warming trends",
+        last_updated: "2024-01-11"
+      }
+    ],
+    overall_risk: 35,
+    marine_protected_areas: 9,
+    coastline_length: 90
+  },
+  {
+    name: "Latvia",
+    code: "LV",
+    threats: [
+      {
+        id: "lv-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 40,
+        affected_species: ["Baltic fish", "Marine mammals"],
+        description: "Improving water quality in Baltic Sea",
+        last_updated: "2024-01-13"
+      }
+    ],
+    overall_risk: 32,
+    marine_protected_areas: 11,
+    coastline_length: 494
+  },
+  {
+    name: "Estonia",
+    code: "EE",
+    threats: [
+      {
+        id: "ee-shipping-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "stable",
+        impact: 45,
+        affected_species: ["Baltic marine life", "Seabirds"],
+        description: "Shipping route pollution in Baltic Sea",
+        last_updated: "2024-01-14"
+      }
+    ],
+    overall_risk: 38,
+    marine_protected_areas: 13,
+    coastline_length: 3794
+  },
+  {
+    name: "Russia",
+    code: "RU",
+    threats: [
+      {
+        id: "ru-arctic-1",
+        type: "climate",
+        severity: "critical",
+        trend: "increasing",
+        impact: 95,
+        affected_species: ["Arctic marine life", "Polar bears"],
+        description: "Rapid Arctic ice loss and ecosystem disruption",
+        last_updated: "2024-01-10"
+      },
+      {
+        id: "ru-pollution-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 80,
+        affected_species: ["Marine mammals", "Fish populations"],
+        description: "Industrial pollution in Arctic and Baltic waters",
+        last_updated: "2024-01-12"
+      }
+    ],
+    overall_risk: 85,
+    marine_protected_areas: 5,
+    coastline_length: 37653
+  },
+  {
+    name: "Ukraine",
+    code: "UA",
+    threats: [
+      {
+        id: "ua-conflict-1",
+        type: "pollution",
+        severity: "critical",
+        trend: "increasing",
+        impact: 90,
+        affected_species: ["Black Sea dolphins", "Fish populations"],
+        description: "War-related environmental damage in Black Sea",
+        last_updated: "2024-01-16"
+      },
+      {
+        id: "ua-algae-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 75,
+        affected_species: ["Black Sea fish", "Marine birds"],
+        description: "Nutrient pollution and algal blooms",
+        last_updated: "2024-01-14"
+      }
+    ],
+    overall_risk: 88,
+    marine_protected_areas: 3,
+    coastline_length: 2782
+  },
+  {
+    name: "Romania",
+    code: "RO",
+    threats: [
+      {
+        id: "ro-danube-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 70,
+        affected_species: ["Black Sea fish", "Dolphins"],
+        description: "Danube River pollution affecting Black Sea",
+        last_updated: "2024-01-13"
+      },
+      {
+        id: "ro-coastal-1",
+        type: "coastal",
+        severity: "medium",
+        trend: "increasing",
+        impact: 55,
+        affected_species: ["Coastal ecosystems", "Migratory birds"],
+        description: "Tourism development on Black Sea coast",
+        last_updated: "2024-01-11"
+      }
+    ],
+    overall_risk: 62,
+    marine_protected_areas: 7,
+    coastline_length: 225
+  },
+  {
+    name: "Bulgaria",
+    code: "BG",
+    threats: [
+      {
+        id: "bg-pollution-1",
+        type: "pollution",
+        severity: "medium",
+        trend: "decreasing",
+        impact: 50,
+        affected_species: ["Black Sea fish", "Marine mammals"],
+        description: "Improving wastewater treatment reducing pollution",
+        last_updated: "2024-01-12"
+      },
+      {
+        id: "bg-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 45,
+        affected_species: ["Anchovy", "Sprat"],
+        description: "Commercial fishing pressure in Black Sea",
+        last_updated: "2024-01-15"
+      }
+    ],
+    overall_risk: 48,
+    marine_protected_areas: 9,
+    coastline_length: 354
+  },
+
+  // Turkey (European part)
+  {
+    name: "Turkey",
+    code: "TR",
+    threats: [
+      {
+        id: "tr-bosphorus-1",
+        type: "pollution",
+        severity: "high",
+        trend: "stable",
+        impact: 75,
+        affected_species: ["Black Sea dolphins", "Migratory fish"],
+        description: "Heavy shipping traffic through Bosphorus",
+        last_updated: "2024-01-14"
+      },
+      {
+        id: "tr-climate-1",
+        type: "climate",
+        severity: "high",
+        trend: "increasing",
+        impact: 70,
+        affected_species: ["Mediterranean species", "Endemic fish"],
+        description: "Rapid warming in Eastern Mediterranean",
+        last_updated: "2024-01-10"
+      },
+      {
+        id: "tr-fishing-1",
+        type: "overfishing",
+        severity: "medium",
+        trend: "stable",
+        impact: 60,
+        affected_species: ["Anchovy", "Mediterranean fish"],
+        description: "Intensive fishing in multiple seas",
+        last_updated: "2024-01-13"
+      }
+    ],
+    overall_risk: 72,
+    marine_protected_areas: 6,
+    coastline_length: 7200
   }
 ];
 
